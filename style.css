@@ -5,3 +5,14 @@
 @media print{body{background:#fff;font-size:10.5pt;color:#000}.site-nav,.actionbar,.site-footer,.format-nav,.search-area,.no-print{display:none!important}.print-only{display:block}.container{width:100%;max-width:none}.format-header{padding:0 0 12pt;border:0}.format-header h1{color:#000;font-size:20pt}.page-main{padding:0}.document-content,.doc-section,.panel{box-shadow:none;border:0;padding:0;margin:0}.document-content h1,.document-content h2,.document-content h3,.document-content h4,.doc-section h2,.doc-section h3,.doc-section h4{color:#000;break-after:avoid}.table-wrap{overflow:visible;border:0}.data-table{min-width:0;width:100%;font-size:8pt}.data-table th{background:#eee!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}table,figure,img{break-inside:avoid}a{color:#000;text-decoration:none}a[href^="http"]:after{content:" (" attr(href) ")";font-size:7.5pt}.doc-figure img{max-height:23cm;object-fit:contain}}
 
 .document-content li,.doc-section li{margin:.32rem 0}.document-content li>p,.doc-section li>p{margin:.15rem 0}
+
+/* Kompetenzraster: vier breite Kompetenzstufen statt acht schmaler Kreuzspalten */
+.competency-table{min-width:980px;table-layout:fixed}
+.competency-table th,.competency-table td{vertical-align:top}
+.competency-table .competency-name{font-weight:800;background:#f4f8fb;color:#173a61}
+.competency-table .level-cell{position:relative;padding-bottom:46px}
+.competency-table .level-cell>p:first-child{margin-top:0}
+.competency-table .assessment-checks{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #ccd6df;margin:14px -10px -9px;padding:8px 10px 0;font-size:.82rem;color:#3f5264;background:#f8fafc}
+.competency-table .assessment-check{display:block;text-align:center;white-space:nowrap;padding:2px 4px}
+@media(max-width:760px){.competency-table{min-width:920px}.competency-table .assessment-checks{font-size:.78rem}}
+@media print{.competency-table{min-width:0;table-layout:fixed;font-size:7.4pt}.competency-table .assessment-checks{font-size:6.8pt}}
