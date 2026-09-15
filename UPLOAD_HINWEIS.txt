@@ -1,0 +1,22 @@
+BEWERTUNGSLEITFADEN – FLAT-FIX FÜR GITHUB PAGES
+
+'
+'Diese Fassung ist absichtlich OHNE Unterordner aufgebaut.
+'
+'Dadurch funktioniert sie auch dann, wenn GitHub/Firefox beim Browser-Upload Ordnerstrukturen auflöst.
+
+'
+'Vorgehen:
+'
+'1. ZIP entpacken.
+'
+'2. Im GitHub-Repository Add file > Upload files öffnen.
+'
+'3. ALLE Dateien aus diesem Ordner gleichzeitig hochladen.
+'
+'4. Direkt in main committen.
+'
+'5. 1–3 Minuten warten und die Seite mit Strg+F5 neu laden.
+
+'
+'Die alten Ordner content/, css/ und js/ können zunächst liegen bleiben. Diese neue Fassung verwendet sie nicht mehr.
