@@ -6,13 +6,22 @@
 
 .document-content li,.doc-section li{margin:.32rem 0}.document-content li>p,.doc-section li>p{margin:.15rem 0}
 
-/* Kompetenzraster: vier breite Kompetenzstufen statt acht schmaler Kreuzspalten */
-.competency-table{min-width:980px;table-layout:fixed}
-.competency-table th,.competency-table td{vertical-align:top}
-.competency-table .competency-name{font-weight:800;background:#f4f8fb;color:#173a61}
-.competency-table .level-cell{position:relative;padding-bottom:46px}
-.competency-table .level-cell>p:first-child{margin-top:0}
-.competency-table .assessment-checks{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid #ccd6df;margin:14px -10px -9px;padding:8px 10px 0;font-size:.82rem;color:#3f5264;background:#f8fafc}
-.competency-table .assessment-check{display:block;text-align:center;white-space:nowrap;padding:2px 4px}
-@media(max-width:760px){.competency-table{min-width:920px}.competency-table .assessment-checks{font-size:.78rem}}
-@media print{.competency-table{min-width:0;table-layout:fixed;font-size:7.4pt}.competency-table .assessment-checks{font-size:6.8pt}}
+/* Kompetenzraster: lesbare Darstellung der Word-Struktur.
+   Kompetenzbezeichnung oben, darunter die vier Entwicklungsstufen.
+   Dozent/Lernender bleiben reine Ankreuzfelder und enthalten keine Kompetenztexte. */
+.competence-raster{display:flex;flex-direction:column;gap:20px;margin:20px 0}
+.competence-block{border:1px solid #b9c8d6;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(23,58,97,.04)}
+.competence-name{margin:0!important;padding:12px 14px;background:#dfeaf4;color:#173a61!important;font-size:1rem!important;line-height:1.35;border:0!important}
+.competence-name strong{font-weight:800}
+.competence-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stage-card{display:flex;flex-direction:column;min-width:0;border-right:1px solid #ccd6df}
+.stage-card:last-child{border-right:0}
+.stage-label{padding:8px 10px;text-align:center;background:#eef4f9;color:#173a61;font-weight:800;border-bottom:1px solid #ccd6df}
+.stage-text{padding:12px 13px;line-height:1.48;flex:1;overflow-wrap:anywhere}
+.stage-text p:first-child{margin-top:0}.stage-text p:last-child{margin-bottom:0}
+.stage-checks{display:grid;grid-template-columns:1fr 1fr;background:#fafcfd;border-top:1px solid #ccd6df;font-size:.78rem;font-weight:700;color:#334e68}
+.stage-checks span{padding:8px 5px;text-align:center;white-space:nowrap}
+.stage-checks span+span{border-left:1px solid #ccd6df}
+@media(max-width:900px){.competence-stages{grid-template-columns:repeat(2,minmax(0,1fr))}.stage-card:nth-child(2){border-right:0}.stage-card:nth-child(-n+2){border-bottom:1px solid #ccd6df}}
+@media(max-width:560px){.competence-stages{grid-template-columns:1fr}.stage-card{border-right:0!important;border-bottom:1px solid #ccd6df}.stage-card:last-child{border-bottom:0}}
+@media print{.competence-raster{gap:10pt}.competence-block{box-shadow:none;border:1px solid #999;break-inside:avoid}.competence-name{background:#e8e8e8!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.competence-stages{grid-template-columns:repeat(4,1fr)}.stage-card{border-right:1px solid #aaa!important;border-bottom:0!important}.stage-card:last-child{border-right:0!important}.stage-label{background:#f2f2f2!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.stage-text{font-size:7.6pt;padding:7pt}.stage-checks{font-size:6.8pt}.stage-checks span{padding:5pt 2pt}}
